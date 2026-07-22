@@ -947,6 +947,10 @@ require('lazy').setup({
   },
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
+    branch = 'master', -- 'main' is an incompatible rewrite (new API, no .configs
+    -- module, needs Neovim 0.12+ nightly); 'master' is kept by upstream
+    -- specifically for backward compat with the setup below. See TROUBLESHOOTING.md
+    -- in the dotfiles repo for the full story if this ever breaks again.
     build = ':TSUpdate',
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
